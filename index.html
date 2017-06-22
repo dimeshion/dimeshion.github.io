@@ -1,0 +1,50 @@
+<html>
+<head>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+</head>
+<script> 
+	google.load("visualization", "1.1", 
+		{packages:["wordtree"]});
+		google.setOnLoadCallback(drawChart);
+		function drawChart() {
+			var data = google.visualization.arrayToDataTable(
+				[ ['Фразы'],
+				 ['Студент 1 курс 1 семестр ТЙМС'],
+				 ['Студент 1 курс 1 семестр ОПР'],
+				 ['Студент 1 курс 1 семестр Мат. анализ'],
+				 ['Студент 1 курс 2 семестр Дискретная математика'],
+				 ['Студент 1 курс 2 семестр Алгоритмы и структуры данных'],
+				 ['Студент 1 курс 2 семестр WEB-программирование'],
+				 ['Студент 2 курс 3 семестр МОДО'],
+				 ['Студент 2 курс 3 семестр Дифференциальные уравнения'],
+				 ['Студент 2 курс 3 семестр ОЗТМ'],
+				 ['Студент 2 курс 4 семестр МЛТА'],
+				 ['Студент 2 курс 4 семестр УМПС'],
+				 ['Студент 2 курс 4 семестр ООЕИ'],
+				 ['Студент 3 курс 5 семестр РЧП'],
+				 ['Студент 3 курс 5 семестр МВП'],
+				 ['Студент 3 курс 5 семестр ОЗАП'],
+				 ['Студент 3 курс 6 семестр ППВЗ'],
+				 ['Студент 3 курс 6 семестр МОКС'],
+				 ['Студент 3 курс 6 семестр ТИК'],
+				 ]
+			);
+		var options = {
+			maxFontSize: 14,
+			wordtree: {
+				format: 'implicit',
+				word: 'Студент'
+			}
+		};
+	var chart = new google.visualization.WordTree
+	(document.getElementById('wordtree_basic'));
+	chart.draw(data, options);
+ }
+ </script>
+ 
+ 
+ 
+ <body>
+ <div id="wordtree_basic" style="width: 100%; height: 500px;"></div>
+
+</body></html>
